@@ -1,0 +1,19 @@
+{
+  "name": "02-_clock-web-app",
+  "version": "1.0.0",
+  "description": "- Solution URL: [Click here]()\r - Live Site URL: [Click here]()",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "tailwindcss": "^3.3.3"
+  }
+}

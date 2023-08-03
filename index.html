@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./js.svg" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+    />
+
+    <title>Day 2 JS | Clock Web App</title>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-[url('https://unsplash.it/1500/1000?image=881&blur=5')] bg-cover bg-fixed font-['Audiowide']"
+  >
+    <main class="flex min-h-screen items-center justify-center">
+      <button
+        class="absolute right-0 top-3 flex items-center justify-center rounded-bl-2xl rounded-tl-2xl bg-sky-400 px-2 py-1 font-semibold transition-all hover:pr-5 z-50"
+      >
+        <img src="js.svg" width="35" height="35" alt="" />&nbsp;Day 2
+      </button>
+      <div class="clock flex items-center justify-center">
+        <div
+          class="clock-face relative flex h-[30rem] w-[30rem] items-center justify-center rounded-full border-[1.25rem] border-white bg-[url('https://www.freeiconspng.com/uploads/roman-numerals-clock-png-6.png')] bg-cover bg-center bg-no-repeat shadow-[inset_0_0_10px_black]"
+        >
+          <div
+            class="junction absolute z-40 h-4 w-4 self-center rounded-full border bg-black shadow-2xl"
+          ></div>
+
+          <div
+            class="hand hour-hand absolute z-10 mr-[10.5rem] h-[0.375rem] w-[38%] origin-[100%] rotate-90 rounded-lg bg-green-900 shadow-2xl transition-all"
+          ></div>
+          <div
+            class="hand min-hand absolute z-20 mr-[11.5rem] h-[0.375rem] w-[42%] origin-[100%] rotate-90 rounded-lg bg-blue-950 shadow-2xl transition-all"
+          ></div>
+          <div
+            class="hand second-hand absolute z-30 mr-[12.4rem] h-[0.1rem] w-[45%] origin-[100%] rotate-90 rounded-lg bg-red-500 shadow-2xl transition-all"
+          ></div>
+        </div>
+      </div>
+    </main>
+    <button
+      class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"
+    >
+      ...
+    </button>
+    <footer
+      class="font-semi-bold fixed bottom-0 rounded-tr-xl bg-sky-300 px-4 py-1 text-center text-black"
+    >
+      Made with ❤️ by Nehal.
+    </footer>
+
+    <script>
+      const hourHand = document.querySelector(".hour-hand"),
+        minHand = document.querySelector(".min-hand"),
+        secHand = document.querySelector(".second-hand");
+
+      setDate = () => {
+        const date = new Date();
+        let hh = date.getHours(),
+          mm = date.getMinutes(),
+          ss = date.getSeconds();
+
+        // secondHandling
+        let secDegrees = (ss / 60) * 360 + 90;
+        secHand.classList.add(`rotate-[${secDegrees}deg]`);
+
+        // minuteHandling
+        let minDegrees = (mm / 60) * 360 + 90;
+        minHand.classList.add(`rotate-[${minDegrees}deg]`);
+
+        // hourHandling
+        let hourDegrees = (hh / 12) * 360 + 90;
+        hourHand.classList.add(`rotate-[${hourDegrees}deg]`);
+      };
+      setInterval(setDate, 1000);
+    </script>
+  </body>
+</html>
