@@ -3,8 +3,8 @@
  
 ### 🔗 Links
 
-- Solution URL: [Click here]()
-- Live Site URL: [Click here]()
+- Solution URL: [Click here](https://github.com/NehalSahu8055/Day-2-Clock-Web-App)
+- Live Site URL: [Click here](https://analog-clock-web-app-nehal.netlify.app/)
 
 
 ### 🛠️ Built with
